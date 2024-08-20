@@ -38,4 +38,88 @@ export const ButtonStyle = styled(DefaultButtonStyle)`
     width: 100%;
     height: 100%;
   }
+  &:disabled {
+    cursor:not-allowed;
+    border: 1px solid #d7d7d7;
+    background: #e4e4e4;
+    color:#b2b2b2;
+  }
+`
+
+export const TextareaStyle = styled.div`
+  .textarea_border {
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    padding: 16px 8px 16px 16px;
+    &:has(textarea:focus) {
+      border: 1px solid orange;
+    }
+    &:has(textarea:read-only) {
+      background:#f8f8f8;
+      pointer-events: none;
+    }
+    &:has(textarea:disabled) {
+      pointer-events: none;
+      background:#f8f8f8;
+    }
+  }
+  textarea {
+    font-family:inherit;
+    border: 1px solid transparent;
+    width: 100%;
+    height: 100px;
+    background:transparent;
+    resize: none;
+    color:#000;
+    padding-right: 5px;
+
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #2f3542;
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: grey;
+      border-radius: 6px;
+    }
+    
+  }
+  
+  .count {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 4px;  
+    color: #CCCCCC;
+  }
+`
+
+export const InputStyle = styled.div`
+  input {
+    position:relative;
+    padding: 12px 16px;
+    width: 100%;
+    max-width:160px;
+    height: 50px;
+    border: 1px solid #d7d7d7;
+    border-radius: 4px;
+    font-family: inherit;
+    color: black;
+    background: #fff;
+    &::placeholder {
+      color: grey;
+    }
+  }
 `
