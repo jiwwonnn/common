@@ -5,21 +5,19 @@ import Input from "./components/units/Input";
 
 const App = () => {
   return (
-    <div>
-        textarea
-        input
-        radio
-        checkbox
-        select
-        textarea
-        no data (no result)
-        popup
-        badge
-        pagination
-        tooltip
-        iconbutton
+    <div style={{padding: '20px'}}>
+      radio
+      checkbox
+      select
+      textarea
+      no data (no result)
+      popup
+      badge
+      pagination
+      tooltip
+      iconbutton
 
-        table
+      table
       <div>
         <Button theme={'orange'}>버튼</Button><br/>
         <Button variant={'default'} theme={'red'}>버튼</Button><br/>
@@ -37,7 +35,16 @@ const App = () => {
         <Textarea count={true} placeholder={"ewrew"}/>
         <Textarea count={true} readOnly placeholder={"abc"}/>
         <br/><br/><br/><br/><br/><br/>
-        <Input placeholder={'안녕하세요.'}/>
+        <Input placeholder={'안녕하세요.'} error={true}/>
+        <Input placeholder={'안녕하세요.'} error={false}/>
+        <Input disabled placeholder={'disabled.'} />
+        <Input readOnly placeholder={'readonly'}/>
+
+
+
+
+        <br/><br/><br/><br/><br/><br/>
+
 
       </div>
     </div>

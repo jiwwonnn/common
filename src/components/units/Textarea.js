@@ -3,7 +3,8 @@ import {TextareaStyle} from "../../assets/styles/UnitStyle";
 /*
 count : ex ) 0/100 , 0/200 / boolean
 disabled
-readonly
+readOnly
+placeholder
 */
 const Textarea = (props) => {
   const { count, className , disabled, readOnly , placeholder } = props

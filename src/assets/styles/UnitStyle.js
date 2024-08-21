@@ -62,6 +62,9 @@ export const TextareaStyle = styled.div`
       pointer-events: none;
       background:#f8f8f8;
     }
+    &:hover {
+      border: 1px solid orange;
+    }
   }
   textarea {
     font-family:inherit;
@@ -72,6 +75,7 @@ export const TextareaStyle = styled.div`
     resize: none;
     color:#000;
     padding-right: 5px;
+    font-family: inherit;
 
 
     &::placeholder {
@@ -118,8 +122,37 @@ export const InputStyle = styled.div`
     font-family: inherit;
     color: black;
     background: #fff;
+    &:hover {
+      border: 1px solid orange;
+    }
+    &:active , &:focus{
+      outline: none;
+      border: 1px solid orange;
+    }
+    
     &::placeholder {
       color: grey;
     }
+    
+    &:disabled {
+      pointer-events: none;
+      background: #f4f4f4;
+      color:#bbb;
+      &::placeholder {
+        color: #bbb;
+      }
+    }
+    &:read-only:not(:disabled) {
+      pointer-events: none;
+      color:#666;
+      &::placeholder {
+        color: #666;
+      }
+    }
+  }
+  .error {
+    display: block;
+    margin-top: 4px;
+    color: red;
   }
 `
