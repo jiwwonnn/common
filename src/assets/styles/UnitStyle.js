@@ -205,4 +205,44 @@ export const RadioButtonStyle = styled.div`
         }
       }
     }
+  
+  &.check {
+    input[type='radio'] {
+      position: absolute;
+
+      &:checked + label {
+        background-color: orange;
+        border-color: orange;
+
+        &:after {
+          position: absolute;
+          content: '';
+          top: 46%;
+          left: 24%;
+          display: table;
+          width: 26%;
+          height: 50%;
+          border: 2px solid white;
+          border-top: 0;
+          border-left: 0;
+          transform: rotate(45deg) scale(0.7) translate(-65%, -65%);
+          transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46), opacity 0.1s;
+          background: transparent;
+          border-radius: unset;
+        }
+      }
+    }
+
+    &+label {
+      display: inline-block;
+      min-width: 24px;
+      width: 24px;
+      height: 24px;
+      background-color: white;
+      border: 1px solid #d7d7d7;
+      border-radius: 50%;
+      transition: 0.3s ease-out;
+      position: relative;
+    }
+  }
 `
