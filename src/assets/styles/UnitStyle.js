@@ -156,3 +156,53 @@ export const InputStyle = styled.div`
     color: red;
   }
 `
+
+export const RadioButtonStyle = styled.div`
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-right: 15px;
+    grid-gap: 6px;
+    cursor: pointer;
+    label {
+      cursor: pointer;
+    }
+
+    &.reverse {
+      flex-direction: row-reverse;
+    }
+
+    input[type='radio'] {
+      display: none;
+      &:checked {
+        &+label {
+          border-color:blue;
+          &:after {
+            content: "";
+            display: block;
+            width: 85%;
+            height: 85%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            z-index: 1;
+            transform: translate(-50%, -50%);
+            background: blue;
+            border-radius: 100%;
+          }
+        }
+      }
+      &+label {
+        position: relative;
+        border: 1px solid grey;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        padding: 3px;
+        &+label {
+          font: inherit;
+          flex:1;
+        }
+      }
+    }
+`
