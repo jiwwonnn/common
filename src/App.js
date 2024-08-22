@@ -53,14 +53,14 @@ const App = () => {
         <RadioButton className={''} text={'라디오2'} name={'radio03'} disabled={true}/>
 
         <br/><br/><br/><br/><br/><br/>
-        <Checkbox type={'basic'} className={''} text={'기본'} defaultChecked={true}/>
-        <Checkbox type={'basic'} className={'ghost'} text={'ghost'} defaultChecked={true}/>
+        <Checkbox className={''} text={'기본'} defaultChecked={true}/>
+        <Checkbox className={'ghost'} text={'ghost'} defaultChecked={true}/>
         <br/>
-        <Checkbox type={'basic'} className={'circle'} text={'circle'} defaultChecked={true}/>
-        <Checkbox type={'basic'} className={'circle ghost'} text={'circle ghost'} defaultChecked={true}/>
+        <Checkbox className={'circle'} text={'circle'} defaultChecked={true}/>
+        <Checkbox className={'circle ghost'} text={'circle ghost'} defaultChecked={true}/>
         <br/>
-        <Checkbox type={'basic'} className={''} text={'disabled'} defaultChecked={true} disabled={true}/>
-        <Checkbox type={'basic'} className={'circle'} text={'circle disabled'} defaultChecked={true} disabled={true}/>
+        <Checkbox className={''} text={'disabled'} defaultChecked={true} disabled={true}/>
+        <Checkbox className={'circle'} text={'circle disabled'} defaultChecked={true} disabled={true}/>
       </div>
     </div>
   )
