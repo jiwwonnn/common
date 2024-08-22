@@ -4,31 +4,15 @@ import Button from "./components/units/Button";
 import Textarea from "./components/units/Textarea";
 import Input from "./components/units/Input";
 import RadioButton from "./components/units/RadioButton";
+import Checkbox from "./components/units/Checkbox";
 
 const App = () => {
-
-  // radiobutton example
-  const [radioList, setRadioList] = useState({
-    selected: 'radio01',
-    radioList01: [
-      { id: 'radio01', value: "test01"},
-      { id: 'radio02', value: "test02"}
-    ]
-  })
-  const handleRadio = (e) => {
-    setRadioList({
-      ...radioList,
-      selected: e.target.id
-    })
-  }
-
 
   return (
     <div style={{padding: '20px'}}>
       radio
       checkbox
       select
-      textarea
       no data (no result)
       popup
       badge
@@ -59,23 +43,24 @@ const App = () => {
         <Input disabled placeholder={'disabled.'} />
         <Input readOnly placeholder={'readonly'}/>
         <br/><br/><br/><br/><br/><br/>
-        {radioList.radioList01.map((radio) => (
-          <RadioButton
-            key={radio.id}
-            radio={radio}
-            onChange={handleRadio}
-            checked={radio.id === radioList.selected} />
-        ))}
-        {radioList.radioList01.map((radio) => (
-          <RadioButton
-            check={true}
-            key={radio.id}
-            radio={radio}
-            onChange={handleRadio}
-            checked={radio.id === radioList.selected} />
-        ))}
+        <RadioButton className={''} text={'라디오1'} name={'radio01'} defaultChecked={true}/>
+        <RadioButton className={''} text={'라디오2'} name={'radio01'}/>
 
+        <RadioButton className={'check'} text={'라디오1'} name={'radio02'} defaultChecked={true} />
+        <RadioButton className={'check'} text={'라디오2'} name={'radio02'} />
 
+        <RadioButton className={''} text={'라디오1'} name={'radio03'} defaultChecked={true} disabled={true}/>
+        <RadioButton className={''} text={'라디오2'} name={'radio03'} disabled={true}/>
+
+        <br/><br/><br/><br/><br/><br/>
+        <Checkbox type={'basic'} className={''} text={'기본'} defaultChecked={true}/>
+        <Checkbox type={'basic'} className={'ghost'} text={'ghost'} defaultChecked={true}/>
+        <br/>
+        <Checkbox type={'basic'} className={'circle'} text={'circle'} defaultChecked={true}/>
+        <Checkbox type={'basic'} className={'circle ghost'} text={'circle ghost'} defaultChecked={true}/>
+        <br/>
+        <Checkbox type={'basic'} className={''} text={'disabled'} defaultChecked={true} disabled={true}/>
+        <Checkbox type={'basic'} className={'circle'} text={'circle disabled'} defaultChecked={true} disabled={true}/>
       </div>
     </div>
   )
