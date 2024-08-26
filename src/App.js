@@ -54,10 +54,6 @@ const App = () => {
 
   return (
     <div style={{padding: '20px'}}>
-      pagination
-      tooltip
-      iconbutton
-
       table
       <div>
         <Button theme={'orange'}>버튼</Button><br/>
@@ -120,6 +116,7 @@ const App = () => {
           }}
           handlePaging={handlePaging} //페이지네이션 클릭 액션값
         />
+        <br/><br/><br/><br/><br/><br/>
 
       </div>
     </div>
