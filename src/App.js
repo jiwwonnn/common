@@ -6,6 +6,7 @@ import Input from "./components/units/Input";
 import RadioButton from "./components/units/RadioButton";
 import Checkbox from "./components/units/Checkbox";
 import Select from "./components/units/Select";
+import TabMenu from "./components/units/TabMenu";
 
 const App = () => {
 
@@ -13,7 +14,7 @@ const App = () => {
   const selectRef1 = useRef(null);
   const selectRef2 = useRef(null);
 
-
+  // select
   const selectList = {
     active: 'select01',
     list: [
@@ -26,14 +27,28 @@ const App = () => {
     console.log('선택한 옵션', active)
   }
 
+  // tab menu
+  const [tabMenu, setTabMenu] = useState({
+    active: 'tab01',
+    list: [
+      { id: 'tab01', title: '탭메뉴'},
+      { id: 'tab02', title: '탭메뉴'},
+      { id: 'tab03', title: '탭메뉴'},
+    ]
+  })
+
+  const handleTabActive = (activeMenu) => {
+    setTabMenu({
+      ...tabMenu,
+      active: activeMenu.id
+    })
+  }
+
 
 
   return (
     <div style={{padding: '20px'}}>
-      radio
-      checkbox
-      select
-      no data (no result)
+      tab
       popup
       badge
       pagination
@@ -89,7 +104,7 @@ const App = () => {
         <Select className={'disabled'} ref={selectRef1} optionList={selectList} handleSelect={handleSelectCustom}/>
 
         <br/><br/><br/><br/><br/><br/>
-
+        <TabMenu className={''} tabMenuList={tabMenu} handleTabActive={handleTabActive}/>
 
       </div>
     </div>
