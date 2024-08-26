@@ -1,12 +1,32 @@
-import {useState} from "react";
+import {useRef, useState} from "react";
 import "./assets/styles/reset.css"
 import Button from "./components/units/Button";
 import Textarea from "./components/units/Textarea";
 import Input from "./components/units/Input";
 import RadioButton from "./components/units/RadioButton";
 import Checkbox from "./components/units/Checkbox";
+import Select from "./components/units/Select";
 
 const App = () => {
+
+
+  const selectRef1 = useRef(null);
+  const selectRef2 = useRef(null);
+
+
+  const selectList = {
+    active: 'select01',
+    list: [
+      { id: 'select01', value: '셀렉트01' },
+      { id: 'select02', value: '셀렉트02' },
+      { id: 'select03', value: '셀렉트03' }
+    ]
+  }
+  const handleSelectCustom = (active) => {
+    console.log('선택한 옵션', active)
+  }
+
+
 
   return (
     <div style={{padding: '20px'}}>
@@ -61,6 +81,16 @@ const App = () => {
         <br/>
         <Checkbox className={''} text={'disabled'} defaultChecked={true} disabled={true}/>
         <Checkbox className={'circle'} text={'circle disabled'} defaultChecked={true} disabled={true}/>
+
+        <br/><br/><br/><br/><br/><br/>
+
+        <Select className={''} ref={selectRef1} optionList={selectList} handleSelect={handleSelectCustom}/>
+        <Select className={''} ref={selectRef2} optionList={selectList} handleSelect={handleSelectCustom} placeholder={'default text'}/>
+        <Select className={'disabled'} ref={selectRef1} optionList={selectList} handleSelect={handleSelectCustom}/>
+
+        <br/><br/><br/><br/><br/><br/>
+
+
       </div>
     </div>
   )

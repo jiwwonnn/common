@@ -469,3 +469,205 @@ export const CheckboxStyle = styled.label`
     font-size: 18px;
   }
 `
+
+export const SelectStyle = styled.div`
+  width: 100%;
+  //max-width: 320px; //각 페이지마다 특정 최대 max-width 값 변경시, 여기값만 조정하면 됨
+  max-width: 100%; //각 페이지마다 특정 최대 max-width 값 변경시, 여기값만 조정하면 됨
+  height: 50px;
+  display: inline-block;
+  overflow: visible;
+  position: relative;
+
+  .placeholder {
+    color: #999;
+    white-space: normal;
+    margin-left: -4px;
+  }
+
+
+  .select_custom_inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+
+    .option_show_txt {
+      width: calc(100% - 32px);
+    }
+  }
+
+  .option_list {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  .option_item {
+    padding: 0 16px;
+    width: 100%;
+    height: 50px;
+    background: white;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    white-space: nowrap;
+    color: #999;
+
+    .cnt_wrap {
+      margin-left: -4px;
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 4px;
+
+      .img {
+        height: 24px;
+        width: 24px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .txt {
+        line-height: normal;
+      }
+      
+      .ico_svg {
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+        
+        svg {
+          width: 100%;
+          min-width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &.selected {
+      position: relative;
+      border: 1px solid #d7d7d7;
+      border-radius: 4px;
+      gap: 8px;
+      transition: 0.3s ease-out;
+      color: #333;
+
+      .cnt_wrap {
+        //width: calc(100% - 34px);
+        width: 100%;
+      }
+
+      .arr_down_ico,
+      .arr_up_ico {
+        min-width: 24px;
+        min-height: 24px;
+        width: 24px;
+        height: 24px;
+        transition: 0.3s ease-out;
+
+        path {
+          stroke: #b2b2b2;
+          transition: 0.3s ease-out;
+        }
+      }
+    }
+  } // option_item
+
+  //-----------hover
+  &:not(.disabled):not(.readonly):hover {
+    .option_item {
+      &.selected {
+        border-color: orange;
+
+        .arr_down_ico,
+        .arr_up_ico {
+          path {
+            stroke: orange;
+          }
+        }
+      }
+    }
+  }
+
+  //-----------active
+  &:not(.disabled):not(.readonly).active {
+    z-index: 6;
+
+    .option_item {
+      &.selected {
+        border-color: orange;
+
+        .arr_down_ico,
+        .arr_up_ico {
+          transform: rotate(180deg);
+
+          path {
+            stroke: orange;
+          }
+        }
+      }
+    }
+
+    .option_list {
+      margin-top: 4px;
+      max-height: 150px;
+      background: white;
+      border: 1px solid #d7d7d7;
+      border-radius: 4px;
+      overflow-y: auto;
+      visibility: visible;
+      transition: 0.3s ease-out;
+      transition-property: max-height, visibility;
+
+      .option_item {
+        color: #666;
+
+        &:hover {
+          background: #f4f4f4;
+          color: #3e3e3e;
+        }
+      }
+    }
+  }
+
+  //------disabled
+  &.disabled {
+    pointer-events: none;
+
+    .select_custom_inner {
+      cursor: default;
+    }
+
+    .option_item {
+      background: #f4f4f4;
+
+      &.selected {
+        color: #bbb;
+      }
+    }
+  }
+
+  //-------readonly
+  &.readonly {
+    .select_custom_inner {
+      cursor: default;
+    }
+
+    .option_item {
+      background: #f4f4f4;
+
+      &.selected {
+        color: #bbb;
+      }
+    }
+  }
+
+`
