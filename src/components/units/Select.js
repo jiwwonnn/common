@@ -55,7 +55,7 @@ const Select = (props, ref) => {
                         <p className="txt ellipsis">{opt.value}</p>
                       </div>
                     )}
-                    {!placeholder && !showSelectBox && <p className="txt ellipsis">{opt.value}</p>} {/* unit이 없으면 opt.value만 렌더링 */}
+                    {!placeholder && !showSelectBox && <p className="txt ellipsis">{opt.value}</p>}
                   </div>
                   내려가기
                 </div>
