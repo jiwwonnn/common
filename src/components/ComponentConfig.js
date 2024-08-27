@@ -5,6 +5,10 @@ import { dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 import Button from '../components/units/Button';
 import Textarea from '../components/units/Textarea';
+import Input from '../components/units/Input';
+import RadioButton from '../components/units/RadioButton';
+
+
 
 
 const handleBtnOnClick = (type) => {
@@ -251,6 +255,136 @@ const ComponentConfig = [
     render: (
       <>
         <Textarea placeholder={"placeholder"} error={true}/>
+      </>
+    )
+  },
+
+
+
+  /******************************************************************************************************************************
+   * input 인풋
+   ******************************************************************************************************************************/
+  {
+    group: `input`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** placeholder, error **/}
+        <Input placeholder={'placeholder'} error={true}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Input placeholder={'placeholder'} error={true}/>
+      </>
+    )
+  },
+  {
+    group: `input`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** placeholder, error **/}
+        <Input placeholder={'placeholder'} error={false}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Input placeholder={'placeholder'} error={false}/>
+      </>
+    )
+  },
+  {
+    group: `input`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** disabled , placeholder **/}
+        <Input disabled placeholder={'disabled'} />
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Input disabled placeholder={'disabled.'}/>
+      </>
+    )
+  },
+  {
+    group: `input`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** readonly , placeholder **/}
+        <Input readOnly placeholder={'readonly'}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Input readOnly placeholder={'readonly'}/>
+      </>
+    )
+  },
+
+
+
+  /******************************************************************************************************************************
+   * radio 라디오
+   ******************************************************************************************************************************/
+  {
+    group: `radio`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** text,defaultChecked **/}
+        <RadioButton className={''} text={'라디오1'} name={'radio01'} defaultChecked={true}/>
+        <RadioButton className={''} text={'라디오2'} name={'radio01'}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <RadioButton className={''} text={'라디오1'} name={'radio01'} defaultChecked={true}/>
+        <RadioButton className={''} text={'라디오2'} name={'radio01'}/>
+      </>
+    )
+  },
+  {
+    group: `radio`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** classname='check' **/}
+        <RadioButton className={'check'} text={'라디오1'} name={'radio02'} defaultChecked={true} />
+        <RadioButton className={'check'} text={'라디오2'} name={'radio02'} />
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <RadioButton className={'check'} text={'라디오1'} name={'radio02'} defaultChecked={true} />
+        <RadioButton className={'check'} text={'라디오2'} name={'radio02'} />
+      </>
+    )
+  },
+  {
+    group: `radio`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** disabled **/}
+        <RadioButton className={''} text={'라디오1'} name={'radio03'} defaultChecked={true} disabled={true}/>
+        <RadioButton className={''} text={'라디오2'} name={'radio03'} disabled={true}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <RadioButton className={''} text={'라디오1'} name={'radio03'} defaultChecked={true} disabled={true}/>
+        <RadioButton className={''} text={'라디오2'} name={'radio03'} disabled={true}/>
       </>
     )
   },

@@ -93,15 +93,6 @@ const ComponentList = () => {
                 <br />
                 경로 입력
                 <br /><br />
-                callback 함수 : handleBtnOnClick
-                <span style={{fontWeight:700, marginLeft:"10px", color:"blue"}}>아래코드 복붙</span>
-                <br /><br />
-                {`const handleBtnOnClick = (type) => {
-                    console.log("클릭한 아이콘 타입 ==> ", type);
-                    if (type === "") {
-                      
-                    }
-                  };`}
               </div>
           ) : tabMenu.active === 'radio' ? (
             <div
