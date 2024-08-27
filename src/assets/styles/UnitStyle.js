@@ -108,6 +108,11 @@ export const TextareaStyle = styled.div`
     margin-top: 4px;  
     color: #CCCCCC;
   }
+  .error {
+    display: block;
+    margin-top: 4px;
+    color: red;
+  }
 `
 
 export const InputStyle = styled.div`

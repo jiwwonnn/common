@@ -43,66 +43,66 @@ const ComponentList = () => {
           >
             &nbsp;&nbsp;&nbsp;경로 : 경로 입력
           </div>
-          {tabMenu.active === 'input' ? (
-            <div
-              style={{
-                fontSize: '16px',
-                fontWeight: '500',
-                padding: '20px',
-                backgroundColor: '#f4f4f4'
-              }}
-            >
-              <span style={{fontWeight:700, color:"orange"}}>import경로</span>
-              <br />
-              경로 입력
-              <br /><br />
-              callback 함수 : handleBtnOnClick
-              <span style={{fontWeight:700, marginLeft:"10px", color:"blue"}}>아래코드 복붙</span>
-              <br /><br />
-              {`const handleBtnOnClick = (type) => {
+          {tabMenu.active === 'button' ? (
+              <div
+                style={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  padding: '20px',
+                  backgroundColor: '#f4f4f4'
+                }}
+              >
+                <span style={{fontWeight:700, color:"orange"}}>import경로</span>
+                <br />
+                경로 입력
+                <div style={{fontSize: 20, fontWeight:700, color:"red"}}>theme 없애고 class로 변경, hover도 그 후 작업 예정</div>
+                <br /><br />
+                callback 함수 : handleBtnOnClick
+                <span style={{fontWeight:700, marginLeft:"10px", color:"blue"}}>아래코드 복붙</span>
+                <br /><br />
+                {`const handleBtnOnClick = (type) => {
                   console.log("클릭한 아이콘 타입 ==> ", type);
                   if (type === "") {
                     
                   }
                 };`}
-            </div>
-          ) : tabMenu.active === 'textarea' ? (
-            <div
-              style={{
-                fontSize: '16px',
-                fontWeight: '500',
-                padding: '20px',
-                backgroundColor: '#f4f4f4'
-              }}
-            >
-              <span style={{fontWeight:700, color:"orange"}}>import경로</span>
-              <br />
-              경로 입력
-            </div>
-          ) : tabMenu.active === 'button' ? (
-            <div
-              style={{
-                fontSize: '16px',
-                fontWeight: '500',
-                padding: '20px',
-                backgroundColor: '#f4f4f4'
-              }}
-            >
-              <span style={{fontWeight:700, color:"orange"}}>import경로</span>
-              <br />
-              경로 입력
-              <div style={{fontSize: 20, fontWeight:700, color:"red"}}>theme 없애고 class로 변경, hover도 그 후 작업 예정</div>
-              <br /><br />
-              callback 함수 : handleBtnOnClick
-              <span style={{fontWeight:700, marginLeft:"10px", color:"blue"}}>아래코드 복붙</span>
-              <br /><br />
-              {`const handleBtnOnClick = (type) => {
-                  console.log("클릭한 아이콘 타입 ==> ", type);
-                  if (type === "") {
-                    
-                  }
-                };`}
-            </div>
+              </div>
+            ) : tabMenu.active === 'textarea' ? (
+              <div
+                style={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  padding: '20px',
+                  backgroundColor: '#f4f4f4'
+                }}
+              >
+                <span style={{fontWeight:700, color:"orange"}}>import경로</span>
+                <br />
+                경로 입력
+              </div>
+            ) : tabMenu.active === 'input' ? (
+              <div
+                style={{
+                  fontSize: '16px',
+                  fontWeight: '500',
+                  padding: '20px',
+                  backgroundColor: '#f4f4f4'
+                }}
+              >
+                <span style={{fontWeight:700, color:"orange"}}>import경로</span>
+                <br />
+                경로 입력
+                <br /><br />
+                callback 함수 : handleBtnOnClick
+                <span style={{fontWeight:700, marginLeft:"10px", color:"blue"}}>아래코드 복붙</span>
+                <br /><br />
+                {`const handleBtnOnClick = (type) => {
+                    console.log("클릭한 아이콘 타입 ==> ", type);
+                    if (type === "") {
+                      
+                    }
+                  };`}
+              </div>
           ) : tabMenu.active === 'radio' ? (
             <div
               style={{

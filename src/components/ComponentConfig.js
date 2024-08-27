@@ -1,7 +1,11 @@
 import { useRef, useState } from "react";
-import Button from '../components/units/Button';
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
+
+
+import Button from '../components/units/Button';
+import Textarea from '../components/units/Textarea';
+
 
 const handleBtnOnClick = (type) => {
   console.log('클릭한 아이콘 타입 ==> ', type);
@@ -180,6 +184,77 @@ const ComponentConfig = [
       </>
     )
   },
+
+
+
+  /******************************************************************************************************************************
+   * textarea 텍스트영역
+   ******************************************************************************************************************************/
+  {
+    group: `textarea`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** 기본 **/}
+        <Textarea />
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Textarea />
+      </>
+    )
+  },
+  {
+    group: `textarea`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** count(글자수 제한) + plcaeholder **/}
+        <Textarea count={150} placeholder={"placeholder"}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Textarea count={150} placeholder={"placeholder"}/>
+      </>
+    )
+  },
+  {
+    group: `textarea`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** plcaeholder + readonly **/}
+        <Textarea readOnly placeholder={"placeholder"}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Textarea readOnly placeholder={"placeholder"}/>
+      </>
+    )
+  },
+  {
+    group: `textarea`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** plcaeholder + error **/}
+        <Textarea placeholder={"placeholder"} error={true}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Textarea placeholder={"placeholder"} error={true}/>
+      </>
+    )
+  },
+  
 
 ]
 
