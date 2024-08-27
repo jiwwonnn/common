@@ -167,13 +167,13 @@ const ComponentList = () => {
               <span style={{fontWeight:700, marginLeft:"10px", color:"blue"}}>아래코드 복붙</span>
               <br /><br />
               {`const [tabMenu, setTabMenu] = useState({
-                      active: 'tab01',
-                      list: [
-                        { id: 'tab01', title: '탭메뉴', count: null, tooltip: null},
-                        { id: 'tab02', title: '탭메뉴', count: null, tooltip: null},
-                        { id: 'tab03', title: '탭메뉴', count: null, tooltip: null},
-                      ]
-                    })`}
+                active: 'tab01',
+                list: [
+                  { id: 'tab01', title: '탭메뉴'},
+                  { id: 'tab02', title: '탭메뉴'},
+                  { id: 'tab03', title: '탭메뉴'},
+                ]
+              })`}
               <br/><br/>
               {`const handleTabActive = (activeMenu) => {
                       setTabMenu({

@@ -9,6 +9,8 @@ import Input from '../components/units/Input';
 import RadioButton from '../components/units/RadioButton';
 import Checkbox from '../components/units/Checkbox';
 import Select from '../components/units/Select';
+import TabMenu from '../components/units/TabMenu';
+
 
 
 
@@ -43,7 +45,24 @@ const ComponentConfig = () => {
     console.log('선택한 옵션', active);
   };
 
-// pagination
+  // tab menu
+  const [tabMenu, setTabMenu] = useState({
+    active: 'tab01',
+    list: [
+      { id: 'tab01', title: '탭메뉴'},
+      { id: 'tab02', title: '탭메뉴'},
+      { id: 'tab03', title: '탭메뉴'},
+    ]
+  })
+
+  const handleTabActive = (activeMenu) => {
+    setTabMenu({
+      ...tabMenu,
+      active: activeMenu.id
+    })
+  }
+
+  // pagination
   const handlePaging = async (param) => {
     console.log("handlePaging-->", param);
   };
@@ -549,6 +568,30 @@ const ComponentConfig = () => {
         </>
       )
     },
+
+
+
+    /******************************************************************************************************************************
+     * tab 탭메뉴
+     ******************************************************************************************************************************/
+    {
+      group: `tab`,
+      componentCode: (
+        <SyntaxHighlighter language="javascript" style={dark}>
+          {`
+        {/** 기본 **/}
+        <TabMenu className={''} tabMenuList={tabMenu} handleTabActive={handleTabActive}/>
+        `}
+        </SyntaxHighlighter >
+      ),
+      render: (
+        <>
+          <TabMenu className={''} tabMenuList={tabMenu} handleTabActive={handleTabActive}/>
+        </>
+      )
+    },
+    
+    
   ]
 
 }
