@@ -10,6 +10,8 @@ import RadioButton from '../components/units/RadioButton';
 import Checkbox from '../components/units/Checkbox';
 import Select from '../components/units/Select';
 import TabMenu from '../components/units/TabMenu';
+import Pagination from '../components/units/Pagination';
+
 
 
 
@@ -587,6 +589,45 @@ const ComponentConfig = () => {
       render: (
         <>
           <TabMenu className={''} tabMenuList={tabMenu} handleTabActive={handleTabActive}/>
+        </>
+      )
+    },
+
+
+    /******************************************************************************************************************************
+     * pagination 페이지네이션
+     ******************************************************************************************************************************/
+    {
+      group: `pagination`,
+      componentCode: (
+        <SyntaxHighlighter language="javascript" style={dark}>
+          {`
+        {/** 기본 **/}
+        <Pagination
+          pagingData={{
+            dataTotal: 100, //전체 데이터 수
+            blockData: 10, //블럭당 데이터수
+            activePage: 1, //현재페이지
+            blockGroup: 5, //페이징을 몇개 단위로 생성할것인지
+            activeLastBtn: true, //맨처음 + 맨마지막 버튼 활성화
+          }}
+          handlePaging={handlePaging} //페이지네이션 클릭 액션값
+        />
+        `}
+        </SyntaxHighlighter >
+      ),
+      render: (
+        <>
+          <Pagination
+            pagingData={{
+              dataTotal: 100, //전체 데이터 수
+              blockData: 10, //블럭당 데이터수
+              activePage: 1, //현재페이지
+              blockGroup: 5, //페이징을 몇개 단위로 생성할것인지
+              activeLastBtn: true, //맨처음 + 맨마지막 버튼 활성화
+            }}
+            handlePaging={handlePaging} //페이지네이션 클릭 액션값
+          />
         </>
       )
     },
