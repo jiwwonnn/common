@@ -7,6 +7,8 @@ import Button from '../components/units/Button';
 import Textarea from '../components/units/Textarea';
 import Input from '../components/units/Input';
 import RadioButton from '../components/units/RadioButton';
+import Checkbox from '../components/units/Checkbox';
+
 
 
 
@@ -385,6 +387,107 @@ const ComponentConfig = [
       <>
         <RadioButton className={''} text={'라디오1'} name={'radio03'} defaultChecked={true} disabled={true}/>
         <RadioButton className={''} text={'라디오2'} name={'radio03'} disabled={true}/>
+      </>
+    )
+  },
+
+
+  /******************************************************************************************************************************
+   * checkbox 체크박스
+   ******************************************************************************************************************************/
+  {
+    group: `checkBox`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** 기본 **/}
+        <Checkbox className={''} text={'기본'} defaultChecked={true}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Checkbox className={''} text={'기본'} defaultChecked={true}/>
+      </>
+    )
+  },
+  {
+    group: `checkBox`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** className='ghost' **/}
+        <Checkbox className={'ghost'} text={'ghost'} defaultChecked={true}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Checkbox className={'ghost'} text={'ghost'} defaultChecked={true}/>
+      </>
+    )
+  },
+  {
+    group: `checkBox`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** className='circle' **/}
+        <Checkbox className={'circle'} text={'circle'} defaultChecked={true}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Checkbox className={'circle'} text={'circle'} defaultChecked={true}/>
+      </>
+    )
+  },
+  {
+    group: `checkBox`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** className='circle'ghost **/}
+        <Checkbox className={'circle ghost'} text={'circle ghost'} defaultChecked={true}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Checkbox className={'circle ghost'} text={'circle ghost'} defaultChecked={true}/>
+      </>
+    )
+  },
+  {
+    group: `checkBox`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** disabled **/}
+        <Checkbox className={''} text={'disabled'} defaultChecked={true} disabled={true}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Checkbox className={''} text={'disabled'} defaultChecked={true} disabled={true}/>
+      </>
+    )
+  },
+  {
+    group: `checkBox`,
+    componentCode: (
+      <SyntaxHighlighter language="javascript" style={dark}>
+        {`
+        {/** circle disabled **/}
+        <Checkbox className={'circle'} text={'circle disabled'} defaultChecked={true} disabled={true}/>
+        `}
+      </SyntaxHighlighter >
+    ),
+    render: (
+      <>
+        <Checkbox className={'circle'} text={'circle disabled'} defaultChecked={true} disabled={true}/>
       </>
     )
   },
