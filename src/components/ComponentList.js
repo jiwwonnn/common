@@ -137,13 +137,13 @@ const ComponentList = () => {
               <span style={{fontWeight:700, marginLeft:"10px", color:"blue"}}>아래코드 복붙</span>
               <br /><br />
               {`const selectList = {
-                      active: 'select01',
-                      list: [
-                        {id: 'select01', img: null, value: '셀렉트01'},
-                        { id: 'select02', img: IMG.BADGE_ICON, value: '셀렉트02'},
-                        { id: 'select03', img: null, value: '셀렉트03'},
-                      ]
-                    }`}
+                active: 'select01',
+                list: [
+                  { id: 'select01', value: '셀렉트01' },
+                  { id: 'select02', value: '셀렉트02' },
+                  { id: 'select03', value: '셀렉트03' }
+                ]
+              };`}
               <br /><br />
               {`
                   const handleSelectCustom = (active) => {
@@ -216,7 +216,7 @@ const ComponentList = () => {
           <th className="result">결과</th>
           </thead>
           <tbody>
-          {ComponentConfig?.map((item, idx) => {
+          {ComponentConfig()?.map((item, idx) => {
             if (item.group === tabMenu.active) {
               return (
                 <>
