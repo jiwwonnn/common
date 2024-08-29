@@ -14,6 +14,7 @@ export const DefaultButtonStyle = styled.button`
   
   min-width:80px;
   min-height:40px;
+  padding: 0 16px;
   font-size: inherit;
   border-radius: 4px;
   border: 1px solid black;
@@ -54,5 +55,76 @@ export const ButtonStyle = styled(DefaultButtonStyle)`
     border: 1px solid #d7d7d7;
     background: #e4e4e4;
     color:#b2b2b2;
+  }
+`
+
+
+  // ${props => props.theme ? props.theme : 'black'};
+
+export const TextareaStyle = styled.div`
+  position: relative;
+  .textarea_wrap {
+    border: 1px solid ${({ error }) => (error ? 'red' : '#d7d7d7')};
+    border-radius: 4px;
+    padding: 16px 8px 16px 16px;
+    &:has(textarea:focus) {
+      border: 1px solid ${({ error }) => (error ? 'red' : 'orange')};
+    }
+    &:has(textarea:read-only) {
+      background:#f8f8f8;
+      pointer-events: none;
+    }
+    &:has(textarea:disabled) {
+      pointer-events: none;
+      background:#f8f8f8;
+    }
+    &:hover {
+      border: 1px solid ${({ error }) => (error ? 'red' : 'orange')};
+    }
+  }
+  textarea {
+    font-family:inherit;
+    border: 1px solid transparent;
+    width: 100%;
+    height: 100px;
+    background:transparent;
+    resize: none;
+    color:#000;
+    padding-right: 5px;
+    font-family: inherit;
+
+
+    &::placeholder {
+      color: #999;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #2f3542;
+      border-radius: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: grey;
+      border-radius: 6px;
+    }
+    
+  }
+  
+  .count {
+    position:absolute;
+    bottom: ${({ error }) => (error ? '0' : '-24px')};
+    right: 0;
+    color: #CCCCCC;
+  }
+  .error {
+    margin-top: 4px;
+    color: red;
   }
 `
