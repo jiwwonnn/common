@@ -128,3 +128,50 @@ export const TextareaStyle = styled.div`
     color: red;
   }
 `
+
+export const InputStyle = styled.div`
+  input {
+    position:relative;
+    padding: 12px 16px;
+    width: 100%;
+    max-width:160px;
+    height: 50px;
+    border: 1px solid ${({ error }) => (error ? 'red' : '#d7d7d7')};
+    border-radius: 4px;
+    font-family: inherit;
+    color: black;
+    background: #fff;
+    &:hover {
+      border: 1px solid ${({ error }) => (error ? 'red' : 'orange')};
+    }
+    &:active , &:focus{
+      outline: none;
+      border: 1px solid ${({ error }) => (error ? 'red' : 'orange')};
+    }
+    
+    &::placeholder {
+      color: grey;
+    }
+    
+    &:disabled {
+      pointer-events: none;
+      background: #f4f4f4;
+      color:#bbb;
+      &::placeholder {
+        color: #bbb;
+      }
+    }
+    &:read-only:not(:disabled) {
+      pointer-events: none;
+      color:#666;
+      &::placeholder {
+        color: #666;
+      }
+    }
+  }
+  .error {
+    display: block;
+    margin-top: 4px;
+    color: red;
+  }
+`
