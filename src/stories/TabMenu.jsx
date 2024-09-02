@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './tabmenu.css';
-import {TabMenuStyle} from "./UnitStyle";  // 올바른 CSS 파일 경로를 확인하세요
+import {TabMenuStyle} from "./UnitStyle";
 
 export const TabMenu = ({ tabMenuList, handleTabActive, className }) => {
   return (

@@ -546,3 +546,98 @@ export const TabMenuStyle = styled.div`
     }
   }
 `
+
+export const PaginationStyle = styled.div`
+  .hidden {
+     position: absolute;
+     top: 0;
+     left: 0;
+     font-size: 0;
+  }
+  margin: 80px auto 0;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  button {
+    padding: 0;
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    border-left: 1px solid #dedede;
+    border-top: 1px solid #dedede;
+    border-bottom: 1px solid #dedede;
+    background: white;
+    transition: 0.3s ease-out;
+
+    svg {
+      width: 32px;
+      height: 32px;
+
+      path {
+        transition: 0.3s ease-out;
+      }
+    }
+
+    &:first-child {
+      border-radius: 4px 0 0 4px;
+    }
+
+    &:last-child {
+      border-right: 1px solid #dedede;
+      border-radius: 0 4px 4px 0;
+    }
+
+    // hover, active 경우
+    &:not(:disabled):hover,
+    &:not(:disabled):active,
+    &:not(:disabled).active {
+      color: white;
+      background: orange;
+      border-color: orange;
+      
+      & + button {
+        border-left: 1px solid orange;
+      }
+
+      &.prev,
+      &.next {
+        path {
+          fill: white;
+        }
+      }
+
+      &.front,
+      &.end {
+        path {
+          fill: white;
+        }
+      }
+    }
+
+    // disabled 경우
+    &:disabled {
+      color: #a8a8a8;
+      cursor: default;
+
+      &.prev,
+      &.next {
+        path {
+          fill: #a8a8a8;
+        }
+      }
+
+      &.front,
+      &.end {
+        path {
+          fill: #a8a8a8;
+        }
+      }
+    }
+  }
+`
