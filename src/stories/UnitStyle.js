@@ -515,3 +515,34 @@ export const SelectStyle = styled.div`
   }
 
 `
+
+export const TabMenuStyle = styled.div`
+  border-bottom: 1px solid #d7d7d7;
+  padding: 0 10px;
+  .tab_list {
+    display: flex;
+    gap: 8px;
+    .tab_item {
+      button {
+        position:relative;
+        min-width:70px;
+        margin: 15px 0;
+        padding: 0 4px;
+        font-size: 16px;
+        &.active {
+          font-weight: 700;
+          &:after {
+            position: absolute;
+            content:"";
+            display: block;
+            width: 100%;
+            height: 3px;  
+            background:orange;
+            left: 0;
+            bottom: -17px;
+          }
+        }
+      }
+    }
+  }
+`
